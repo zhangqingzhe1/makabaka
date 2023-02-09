@@ -4,71 +4,240 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web</title>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>登录界面</title>
+    <script>
+        let msg = [{
+    name: '熊·何天阔',
+    age: 18,
+    strengths: '卖萌、喜欢熊抱、敦实、极其热爱学习',
+    avatar: 'https://heaven-1.oss-cn-beijing.aliyuncs.com/何天阔.jpg',
+    email: 'xiongdeliliang',
+    password: 1422718351
+},
+{
+    name: '泽·李宜泽',
+    age: 2,
+    strengths: '涩、原、篮',
+    avatar: 'https://heaven-1.oss-cn-beijing.aliyuncs.com/李宜泽.jpg',
+    email: 'wuwuwuwodeaize',
+    password: 2278204751
+},
+{
+    name: '蛋·毛志恒',
+    age: 18,
+    strengths: '乒乓、发癫、热爱想象',
+    avatar: 'https://heaven-1.oss-cn-beijing.aliyuncs.com/毛志恒.jpg',
+    email: 'xianglumaodan',
+    password: 2961496435
+},
+{
+    name: '儿·吴凯旋',
+    age: 18,
+    strengths: '半夜寂静无比时窝在被子里玩手机',
+    avatar: 'https://heaven-1.oss-cn-beijing.aliyuncs.com/吴凯旋.jpg',
+    email: 'wugebaizhanjia',
+    password: 1499172037
+},
+{
+    name: '史·张放',
+    age: 19,
+    strengths: '傻笑、发呆、寄生、看小说',
+    avatar: 'https://heaven-1.oss-cn-beijing.aliyuncs.com/张放.jpg',
+    email: 'woliatiantianne',
+    password: 1742405492
+},
+{
+    name: '神·张清喆',
+    age: 18,
+    strengths: '气宇轩昂、面如冠玉、玉树临风、英俊潇洒',
+    avatar: 'https://heaven-1.oss-cn-beijing.aliyuncs.com/吴彦祖.jpeg',
+    email: 'wanmeiwuxia',
+    password: 1216543271
+},
+{
+    name: '丁丁',
+    age: 19,
+    strengths: '气宇轩昂、面如冠玉、玉树临风、英俊潇洒',
+    avatar: 'https://heaven-1.oss-cn-beijing.aliyuncs.com/丁俊迪.jpg',
+    email: 'dingjundi',
+    password: 1914266077
+}
+]   
+    </script>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        body 
+        {
+            background-image: url("https://heaven-1.oss-cn-beijing.aliyuncs.com/网页背景图.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .bigbox
+        {
+            /* background-color: red; */
+            width:400px;
+            height: 140px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            padding: 40px 50px;
+            overflow: hidden;
+        }
+        .new_bigbox
+        {
+            /* background-color: red; */
+            width:700px;
+            height: 300px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            padding: 40px 50px;
+            padding-left: 200px;
+            margin-left: 200px;
+            overflow: hidden;
+        }
+        .box1
+        {
+            height: 50px;
+            width: 400px;
+            /* background-color: yellow; */
+            overflow: hidden;
+            display: flex;
+        }
+        .box1_1
+        {
+            height: 50px;
+            width: 90px;
+            /* background-color: blue; */
+            text-align: center;
+            line-height: 50px;
+        }
+        .box1_2
+        {
+            height: 50px;
+            width: 210px;
+            /* background-color: orange; */
+            text-align: center;
+            line-height: 50px;
+        }
+        .box1_3
+        {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 13px;
+            color: red;
+        }
+        .box2
+        {
+            height: 40px;
+            width: 300px;
+            /* background-color: yellow; */
+            text-align: center;
+            line-height: 40px;
+            
+        }
+        .avator
+        {
+            /* display: block; */
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    <div>当前时间：<span id="time"></span></div>
-    账号：<input type="text" id="text">
-    <br>
-    密码：<input type="password" id="password">
-    <br><br>
-    <button id="register">注册</button>
-    <button id="obtain">获取用户列表</button>
-    <div >
-        <ul id="user">
-            
-        </ul>
+    <div class="bigbox" id="bigbox">
+        <div class="box1">
+            <div class="box1_1">账号</div>
+            <div class="box1_2" ><input type="email" id="email1"></div>
+            <div class="box1_3" id="email2"></div>
+        </div>
+        <div class="box1">
+            <div class="box1_1">密码</div>
+            <div class="box1_2" ><input type="password" id="pass1"></div>
+            <div class="box1_3" id="pass2"></div>
+        </div>
+        <div class="box2"><input type="submit" id="sub" value="提交" ></div>
     </div>
     <script>
-        var time=document.getElementById("time");
-        var text=document.getElementById("text");
-        var password=document.getElementById("password");
-        var register=document.getElementById("register");
-        var obtain=document.getElementById("obtain");
-        var user=document.getElementById("user");
-        function Time()
+        var email1=document.getElementById("email1");
+        var email2=document.getElementById("email2");
+        var pass1=document.getElementById("pass1");
+        var pass2=document.getElementById("pass2");
+        var sub=document.getElementById("sub");
+        var bigbox=document.getElementById("bigbox");
+        var body=document.body;
+        //var reg=/^\S+(@qq|@163)\.(com|cn)$/;
+        var reg=/^[a-z]*$/;
+        console.log(email1.value);
+        email1.onblur=function()
         {
-            axios({
-                url:"https://api.reginvolver.cn/common/time",
-                method:"get",
-                headers:{"Content-Type":"application/x-www-form-urlencoded"}
-            }).then(value=>{
-                time.textContent=value.data;
-            })
+            if(!reg.test(email1.value))
+            {
+                email2.innerHTML="账号格式不正确";
+            }
+            else
+            {
+                email2.innerHTML="";
+            }
+        };
+        function newpage(index)
+        {
+            var new_bigbox = document.createElement("div");
+            new_bigbox.classList.add("new_bigbox");
+            body.appendChild(new_bigbox);
+            var new_box1 = document.createElement("div");
+            var new_box2 = document.createElement("img");
+            var new_box3 = document.createElement("div");
+            var new_box4 = document.createElement("div");
+            var new_box5 = document.createElement("div");
+            new_bigbox.appendChild(new_box1);
+            new_bigbox.appendChild(new_box2);
+            new_bigbox.appendChild(new_box3);
+            new_bigbox.appendChild(new_box4);
+            new_bigbox.appendChild(new_box5);
+            new_box1.innerHTML="登录成功";
+            new_box2.src=msg[index].avatar;
+            new_box2.classList.add("avator");
+            new_box3.innerHTML="姓名："+msg[index].name;
+            new_box4.innerHTML="年龄："+msg[index].age;
+            new_box5.innerHTML="特点："+msg[index].strengths;
         }
-        Time();
-        // setInterval(Time,1); 
-        register.addEventListener("click",()=>{
-            axios({
-                url:"https://api.reginvolver.cn/user/register",
-                method:"POST",
-                headers:{"Content-Type":"application/json"},
-                data:{
-                    "password": password.value,
-                    "username": text.value
-                }
-            }).then((value)=>{
-                alert("注册成功");
-                console.log("注册报文" ,value);
-            })
-        });
-        obtain.addEventListener("click",()=>{
-            axios({
-                url:"https://api.reginvolver.cn/user/list",
-                method:"GET",
-                headers:{"Content-Type":"application/x-www-form-urlencoded"}
-            }).then((value)=>{
-                var len=value.data.data.records.length;
-                for(let i=0;i<len;i++)
+        sub.onclick=function()
+        {
+            var flag=true;
+            for(var i=0;i< msg.length;i++)
+            {
+                if(msg[i].email==email1.value)
                 {
-                    const li = document.createElement("li");
-                    user.appendChild(li);
-                    li.textContent=value.data.data.records[i].username;
+                    flag=false;
+                    if(msg[i].password==pass1.value)
+                    {
+                        bigbox.remove();
+                        newpage(i);
+                        break;
+                    }
+                    else
+                    {
+                        pass2.innerHTML="密码不正确";
+                        break;
+                    }
                 }
-                console.log("用户信息列表报文" ,value);
-            })
-        });
+            }
+            if(flag==true)
+            {
+                email2.innerHTML="该账号未注册";
+            }
+        };
     </script>
 </body>
 </html>
