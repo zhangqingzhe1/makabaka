@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="book1.css">
+    
+</head>
+<body>
+    <div class="bigbox">
+        <!-- 导航栏 -->
+        <div class="top">
+            <div class="top_left">
+                <img src="2-94.png" alt="" class="top_left_photo">
+            </div>
+            <div class="top_mid"></div>
+            <div class="top_right">
+                <div class="top_right_word" id="denglu_button" style="cursor:pointer">登录</div>
+                <div class="top_right_word" id="zhuce_button" style="cursor:pointer">注册</div>
+                <div class="top_right_word" id="bangzhu_button" style="cursor:pointer">帮助</div>
+            </div>
+            
+        </div>
+        <hr style="height: 2px;" >
+        <div class="mid">
+            <div class="mid_left">
+                <div class="mid_left_line" id="shuku" style="cursor:pointer">
+                    <img src="书库1.png" class="mid_left_line_img1">
+                    <img src="下箭头.png" class="mid_left_line_img2" id="shukujiantou">
+                </div>
+                <div class="mid_left_line" id="sousuo" style="cursor:pointer">
+                    <img src="搜索1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2" id="sousuojiantou">
+                </div>
+                <div class="mid_left_line" id="jiehuan" style="cursor:pointer">
+                    <img src="借还记录1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2" id="jiehuanjiantou">
+                </div>
+                <div class="mid_left_line" id="geren" style="cursor:pointer">
+                    <img src="个人简介1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2" id="gerenjiantou">
+                </div>
+            </div>
+            <!-- 中间部分 -->
+            <!-- 书库功能 -->
+            <div class="mid_mid" >
+                <!-- 登录页面 -->
+                <div class="denglu">
+                    <div class="denglu_1">
+                        <div class="denglu_1_1">
+                            <div class="denglu_1_1_1">
+                                登录
+                            </div>
+                        </div>
+                        <div class="denglu_1_2">
+                            <img src="57-2832.png" id="denglu_chacha"  class="chacha" style="cursor:pointer">
+                        </div>
+                    </div>
+                    <div class="denglu_2">
+                        <div class="denglu_2_word" id="dengluyouxiang1">邮箱</div>
+                        <div><input type="email" class="denglu_email" id="dengluyouxiang2"></div>
+                    </div>
+                    <div class="denglu_2">
+                        <div class="denglu_2_word" id="denglumima1">密码</div>
+                        <div><input type="password" class="denglu_password"  id="denglumima2"></div>
+                    </div>
+                    <div class="denglu_3">
+                        <div class="denglu_3_1" style="cursor:pointer">确定</div>
+                    </div>
+                </div>
+                <!-- 注册界面 -->
+                <div class="zhuce">
+                    <div class="denglu_1">
+                        <div class="denglu_1_1">
+                            <div class="denglu_1_1_1">
+                                注册
+                            </div>
+                        </div>
+                        <div class="denglu_1_2">
+                            <img src="57-2832.png" id="zhuce_chacha"  class="chacha" style="cursor:pointer">
+                        </div>
+                    </div>
+                    <div class="denglu_2">
+                        <div class="denglu_2_word" id="zhuceyouxiang">邮箱</div>
+                        <div><input type="email" class="zhuce_email" id="zhuceemail"></div>
+                    </div>
+                    <div class="denglu_2">
+                        <div class="denglu_2_word" >密码</div>
+                        <div><input type="password" class="zhuce_password1" id="zhucemima1"></div>
+                    </div>
+                    <div class="denglu_2">
+                        <div class="denglu_2_word" id="again">再次输<br/>入密码</div>
+                        <div><input type="password" class="zhuce_password2" id="zhucemima2"></div>
+                    </div>
+                    <div class="denglu_3">
+                        <div class="zhuce_3_1" style="cursor:pointer">确定</div>
+                    </div>
+                </div>
+                <!-- 系统说明 -->
+                <div class="xitongshuoming">
+                    <div class="xitong">
+                        <div class="xitong_1">
+                            <div class="xitong_1_1">
+                                系统说明：
+                            </div>
+                        </div>
+                        <div class="xitong_1_2">
+                            <img src="57-2832.png" id="xitong_chacha"  class="chacha" style="cursor:pointer">
+                        </div>
+                    </div>
+                    <div class="xitong_2">
+                        如果没有账号，请先注册，没有登录时无法进行页面操作。
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div id="gongneng1">    
+                    <div class="mid_mid_top">
+                        <div class="mid_mid_top_left" id="tuijian">推荐</div>
+                        <!-- <div class="mid_mid_top_right" id="fenlei">分类</div> -->
+                    </div>
+                    <div class="mid_mid_mid" >
+                        <div class="mid_mid_mid_1">
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></span></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></s></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></span></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></span></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></span></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                        </div>
+                        <div class="mid_mid_mid_1">
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></span></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></s></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></span></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></span></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                            <div class="mid_mid_mid_2">
+                                <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
+                                <div class="mid_mid_mid_2_word">书名：<span class="mid_mid_mid_2_word_1"></span></div>
+                                <div class="mid_mid_mid_2_word">作者：<span class="mid_mid_mid_2_word_2"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="gongneng2" style="background-color:blue;">
+                    <!-- 搜索功能填充 -->
+
+                    <!-- 搜索功能填充 -->
+                </div>
+                <div id="gongneng3" style="background-color:blue;">
+                    <!-- 借还记录功能填充 -->
+
+                    <!-- 借还记录功能填充 -->
+                </div>
+                <div id="gongneng4" style="background-color:blue;">
+                    <!-- 个人账号功能填充 -->
+
+                    <!-- 个人账号功能填充 -->
+                </div>
+                   
+            </div>
+            <div class="mid_right"></div>
+        </div>
+        <div class="bot">
+            <img src="2-137.png" class="bot_img">
+        </div>
+    </div>
+    <script src="book1.js"></script>
+</body>
+</html>
