@@ -6,25 +6,71 @@ document.addEventListener("mousewheel", function (e) {
 }, {passive: false}); 
    
 //首页书名
+var books=[
+    {
+        name:"牧神记",
+        author:"宅猪",
+        photo:"牧神记.webp",
+    },
+    {
+        name:"西游记",
+        author:"吴承恩",
+        photo:"西游记.gif",
+    },{
+        name:"水浒传",
+        author:"施耐庵",
+        photo:"水浒传.jpg",
+    },{
+        name:"三国演义",
+        author:"罗贯中",
+        photo:"三国演义.jpg",
+    },{
+        name:"红楼梦",
+        author:"曹雪芹",
+        photo:"红楼梦.webp",
+    },
+    {
+        name:"解忧杂货店",
+        author:"东野圭吾",
+        photo:"解忧杂货店.jpg",
+    },
+    {
+        name:"白夜行",
+        author:"东野圭吾",
+        photo:"白夜行.jpg",
+    },
+    {
+        name:"史记",
+        author:"司马迁",
+        photo:"史记.webp",
+    },
+    {
+        name:"聊斋志异",
+        author:"蒲松龄",
+        photo:"聊斋志异.jpg",
+    },
+    {
+        name:"安徒生童话",
+        author:"安徒生",
+        photo:"安徒生童话.jpg",
+    },
+];
 var shuming=document.getElementsByClassName("mid_mid_mid_2_word_1");
-var shumings=["牧神记","西游记","水浒传","三国演义","红楼梦","解忧杂货店","白夜行","史记","聊斋志异","安徒生童话"];
 for(var i=0;i<10;i++)
 {
-    shuming[i].innerHTML=shumings[i];
+    shuming[i].innerHTML=books[i].name;
 }
 //首页作者
 var zuozhe=document.getElementsByClassName("mid_mid_mid_2_word_2");
-var zuozhes=["宅猪","吴承恩","施耐庵","罗贯中","曹雪芹","东野圭吾","东野圭吾","司马迁","蒲松龄","安徒生"];
 for(var i=0;i<10;i++)
 {
-    zuozhe[i].innerHTML=zuozhes[i];
+    zuozhe[i].innerHTML=books[i].author;
 }
 //首页封面
 var fengmian=document.getElementsByClassName("mid_mid_mid_2_photo_1");
-var fengmians=["牧神记.webp","西游记.gif","水浒传.jpg","三国演义.jpg","红楼梦.webp","解忧杂货店.jpg","白夜行.jpg","史记.webp","聊斋志异.jpg","安徒生童话.jpg"];
 for(var i=0;i<10;i++)
 {
-    fengmian[i].src=fengmians[i];
+    fengmian[i].src=books[i].photo;
 }
 //账号信息
 var zhanghaos=[
@@ -35,17 +81,17 @@ var zhanghaos=[
         account:"00001",
         introduction:"我是小毛" ,
         num:1,
-        book:["牧神记"],
+        book:[0],
         photo:"小毛.webp"
     },
     {
         name:"小泽",
         email:"2@qq.com",
-        password:"2",
+        password:"222",
         account:"00002",
         introduction:"我是小泽" ,
         num:1,
-        book:["西游记"],
+        book:[1],
         photo:"小泽.webp"
     },
     {
@@ -55,7 +101,7 @@ var zhanghaos=[
         account:"00003",
         introduction:"我是小熊" ,
         num:1,
-        book:["水浒传"],
+        book:[2],
         photo:"小熊.webp"
     },
     {
@@ -65,7 +111,7 @@ var zhanghaos=[
         account:"00004",
         introduction:"我是小张" ,
         num:1,
-        book:["三国演义"],
+        book:[3],
         photo:"小张.webp"
     },
     {
@@ -75,7 +121,7 @@ var zhanghaos=[
         account:"00005",
         introduction:"我是小放" ,
         num:1,
-        book:["红楼梦"],
+        book:[4],
         photo:"小放.webp"
     },
     {
@@ -85,7 +131,7 @@ var zhanghaos=[
         account:"00006",
         introduction:"我是小旋" ,
         num:1,
-        book:["白夜行"],
+        book:[5],
         photo:"小旋.webp"
     }
 ];
@@ -121,9 +167,11 @@ document.getElementById("denglu_button").addEventListener("click",()=>{
 });
 
 //登录界面确定
-var dengluflag=0;
+var dengluflag=0;//判断是否登录
+
 document.querySelector(".denglu_3_1").addEventListener("click",()=>{
     var flag=true;
+    var zhanghao=-1;
     for(var i=0;i<zhanghaos.length;i++)
     {
         if(zhanghaos[i].email==dengluyouxiang2.value)
@@ -132,6 +180,7 @@ document.querySelector(".denglu_3_1").addEventListener("click",()=>{
             if(zhanghaos[i].password==denglumima2.value)
             {
                 //登录通过
+                zhanghao=i;
                 document.querySelector(".denglu").style.display="none";
                 dengluflag=1;
                 alert("登录成功");
@@ -153,6 +202,29 @@ document.querySelector(".denglu_3_1").addEventListener("click",()=>{
     {
         dengluyouxiang1.innerHTML="该邮箱<br/>未注册";
         dengluyouxiang1.style.color="red";
+    }
+    //个人账号功能
+    var geren_photo=document.getElementById("geren_photo");
+    var geren_zhanghao=document.getElementById("geren_zhanghao");
+    var geren_nicheng=document.getElementById("geren_nicheng");
+    var geren_jieshao=document.getElementById("geren_jieshao");
+    var person_book_lnquiry1_book_photo=document.getElementsByClassName("person_book_lnquiry1_book_photo");
+    var person_book_lnquiry1_name=document.getElementsByClassName("person_book_lnquiry1_name");
+    var person_book_lnquiry1_author=document.getElementsByClassName("person_book_lnquiry1_author");
+    geren_photo.src=zhanghaos[zhanghao].photo;
+    geren_zhanghao.innerHTML=zhanghaos[zhanghao].account;
+    geren_nicheng.innerHTML=zhanghaos[zhanghao].name;
+    geren_jieshao.innerHTML=zhanghaos[zhanghao].introduction;
+    for(var i=0;i<4;i++)
+    {
+        person_book_lnquiry1_book_photo[i].style.display="none";
+    }
+    for(var i=0;i<zhanghaos[zhanghao].num;i++)
+    {
+        person_book_lnquiry1_book_photo[i].src=books[zhanghaos[zhanghao].book[i]].photo;
+        person_book_lnquiry1_book_photo[i].style.display="block";
+        person_book_lnquiry1_name[i].innerHTML="书名："+books[zhanghaos[zhanghao].book[i]].name;
+        person_book_lnquiry1_author[i].innerHTML="作者："+books[zhanghaos[zhanghao].book[i]].author;
     }
 });
 
@@ -306,3 +378,4 @@ document.getElementById("geren").addEventListener("click",()=>{
 //     document.getElementById("tuijian").className="mid_mid_top_right";
 //     document.getElementById("fenlei").className="mid_mid_top_left";
 // });
+
