@@ -28,12 +28,7 @@ denglumima2.onblur=function()
     denglumima1.innerHTML="密码";
     denglumima1.style.color="#444444";
 };
-//打开登录界面
-var dengluflag=0;//判断是否登录成功
-document.getElementById("denglu_button").addEventListener("click",()=>{
-    document.querySelector(".denglu").style.display="block";
-});
-//登录界面确定
+//管理员账号
 var msg=[
     {
         name:"小毛",
@@ -45,7 +40,35 @@ var msg=[
         email:"xiaoze@qq.com",
         password:"xiaoze"
     }
-];//管理员账号
+];
+//cookie登录
+var dengluflag=0;//判断是否登录成功
+for(var i=0;i<msg.length;i++)
+    {
+        if(msg[i].email==$.cookie("denglu_email_2"))
+        {            
+            if(msg[i].password==$.cookie("denglu_mima_2"))
+            {
+                //登录通过
+                document.querySelector(".denglu").style.display="none";
+                dengluflag=1;
+                alert("登录成功");
+                break;
+            }
+            else
+            {
+                denglumima1.innerHTML="密码<br/>错误";
+                denglumima1.style.color="red";
+                break;
+            }
+        }
+    }
+//打开登录界面
+
+document.getElementById("denglu_button").addEventListener("click",()=>{
+    document.querySelector(".denglu").style.display="block";
+});
+//登录界面确定
 document.querySelector(".denglu_3_1").addEventListener("click",()=>{
     var flag=true;
     // msg为数据库中账号信息
@@ -61,6 +84,8 @@ document.querySelector(".denglu_3_1").addEventListener("click",()=>{
                 document.querySelector(".denglu").style.display="none";
                 dengluflag=1;
                 alert("登录成功");
+                $.cookie("denglu_email_2", dengluyouxiang2.value,{expires: 1});
+                $.cookie("denglu_mima_2", denglumima2.value,{expires: 1});
                 break;
             }
             else
