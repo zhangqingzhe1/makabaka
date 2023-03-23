@@ -4,7 +4,8 @@ document.addEventListener("mousewheel", function (e) {
     event.preventDefault();
     }
 }, {passive: false}); 
-   
+// $.cookie("denglu_email", 0);
+// $.cookie("denglu_mima", 0);
 //首页书名
 var books=[
     {
@@ -170,8 +171,8 @@ document.getElementById("denglu_button").addEventListener("click",()=>{
 var dengluflag=0;//判断是否登录
 
 document.querySelector(".denglu_3_1").addEventListener("click",()=>{
-    var flag=true;
-    var zhanghao=-1;
+    var flag=true;//判断邮箱是否存在
+    var zhanghao=-1;//判断是第几个账号登录
     for(var i=0;i<zhanghaos.length;i++)
     {
         if(zhanghaos[i].email==dengluyouxiang2.value)
@@ -182,8 +183,13 @@ document.querySelector(".denglu_3_1").addEventListener("click",()=>{
                 //登录通过
                 zhanghao=i;
                 document.querySelector(".denglu").style.display="none";
+                
                 dengluflag=1;
                 alert("登录成功");
+                $.cookie("denglu_email", dengluyouxiang2.value,{expires: 1});
+                $.cookie("denglu_mima", denglumima2.value,{expires: 1});
+
+                console.log($.cookie("denglu_email"));
                 break;
             }
             else
@@ -204,13 +210,14 @@ document.querySelector(".denglu_3_1").addEventListener("click",()=>{
         dengluyouxiang1.style.color="red";
     }
     //个人账号功能
-    var geren_photo=document.getElementById("geren_photo");
-    var geren_zhanghao=document.getElementById("geren_zhanghao");
-    var geren_nicheng=document.getElementById("geren_nicheng");
-    var geren_jieshao=document.getElementById("geren_jieshao");
-    var person_book_lnquiry1_book_photo=document.getElementsByClassName("person_book_lnquiry1_book_photo");
-    var person_book_lnquiry1_name=document.getElementsByClassName("person_book_lnquiry1_name");
-    var person_book_lnquiry1_author=document.getElementsByClassName("person_book_lnquiry1_author");
+    var geren_photo=document.getElementById("geren_photo");//头像
+    var geren_zhanghao=document.getElementById("geren_zhanghao");//账号
+    var geren_nicheng=document.getElementById("geren_nicheng");//昵称
+    var geren_jieshao=document.getElementById("geren_jieshao");//介绍
+    var person_book_lnquiry1_book_photo=document.getElementsByClassName("person_book_lnquiry1_book_photo");//图书封面
+    var person_book_lnquiry1_name=document.getElementsByClassName("person_book_lnquiry1_name");//图书名字
+    var person_book_lnquiry1_author=document.getElementsByClassName("person_book_lnquiry1_author");//图书作者
+    var tuichu=document.getElementById("tuichu");//退出登录
     geren_photo.src=zhanghaos[zhanghao].photo;
     geren_zhanghao.innerHTML=zhanghaos[zhanghao].account;
     geren_nicheng.innerHTML=zhanghaos[zhanghao].name;
@@ -226,8 +233,43 @@ document.querySelector(".denglu_3_1").addEventListener("click",()=>{
         person_book_lnquiry1_name[i].innerHTML="书名："+books[zhanghaos[zhanghao].book[i]].name;
         person_book_lnquiry1_author[i].innerHTML="作者："+books[zhanghaos[zhanghao].book[i]].author;
     }
+    tuichu.addEventListener("click",()=>{
+        dengluflag=0;
+        zhanghao=-1;
+        document.getElementById("sousuojiantou").src="右箭头.png";
+        document.getElementById("shukujiantou").src="下箭头.png";
+        document.getElementById("jiehuanjiantou").src="右箭头.png";
+        document.getElementById("gerenjiantou").src="右箭头.png";
+        gongneng1.style.display="block";
+        gongneng2.style.display="none";
+        gongneng3.style.display="none";
+        gongneng4.style.display="none";
+    });
 });
 
+// for (let i = 0; i <zhanghaos.length ; i++) {
+//     if(zhanghaos[i].email==$.cookie("denglu_email"))
+//         {
+//             if(zhanghaos[i].password==$.cookie("denglu_mima"))
+//             {
+//                 //登录通过
+//                 zhanghao=i;
+//                 document.querySelector(".denglu").style.display="none";
+//                 dengluflag=1;
+//                 alert("登录成功");
+//                 break;
+//             }
+//             else
+//             {
+//                 break;
+//             }
+//         }
+//         else
+//         {
+//             ;
+//         }
+    
+// }
 
 
 //登录界面关闭
@@ -276,9 +318,9 @@ document.querySelector(".zhuce_3_1").addEventListener("click",()=>{
                 password:zhucemima1.value,
                 account:"0000"+(zhanghaos.length+1),
                 introduction:"我是"+zhuceemail.value ,
-                num:1,
+                num:0,
                 book:[],
-                photo:"小旋.webp"
+                photo:"未登录头像.jpg"
             };
             alert("注册成功");
             document.querySelector(".zhuce").style.display="none";
