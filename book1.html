@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>用户端</title>
     <link rel="stylesheet" href="book1.css">
+    <link rel="stylesheet" href="bookDetails.css">
+    <link rel="stylesheet" href="borrowRecord.css">
     <script src="./jquery-3.6.4.js"></script>
     <script type="text/javascript" src="./jquery.cookie/jquery.cookie.js"></script>
 </head>
+
 <body>
     <div class="bigbox">
         <!-- 导航栏 -->
@@ -22,9 +26,9 @@
                 <div class="top_right_word" id="zhuce_button" style="cursor:pointer">注册</div>
                 <div class="top_right_word" id="bangzhu_button" style="cursor:pointer">帮助</div>
             </div>
-            
+
         </div>
-        <hr style="height: 2px;" >
+        <hr style="height: 2px;">
         <div class="mid">
             <div class="mid_left">
                 <div class="mid_left_line" id="shuku" style="cursor:pointer">
@@ -46,7 +50,7 @@
             </div>
             <!-- 中间部分 -->
             <!-- 书库功能 -->
-            <div class="mid_mid" >
+            <div class="mid_mid">
                 <!-- 登录页面 -->
                 <div class="denglu">
                     <div class="denglu_1">
@@ -56,7 +60,7 @@
                             </div>
                         </div>
                         <div class="denglu_1_2">
-                            <img src="57-2832.png" id="denglu_chacha"  class="chacha" style="cursor:pointer">
+                            <img src="57-2832.png" id="denglu_chacha" class="chacha" style="cursor:pointer">
                         </div>
                     </div>
                     <div class="denglu_2">
@@ -65,7 +69,7 @@
                     </div>
                     <div class="denglu_2">
                         <div class="denglu_2_word" id="denglumima1">密码</div>
-                        <div><input type="password" class="denglu_password"  id="denglumima2"></div>
+                        <div><input type="password" class="denglu_password" id="denglumima2"></div>
                     </div>
                     <div class="denglu_3">
                         <div class="denglu_3_1" style="cursor:pointer">确定</div>
@@ -80,7 +84,7 @@
                             </div>
                         </div>
                         <div class="denglu_1_2">
-                            <img src="57-2832.png" id="zhuce_chacha"  class="chacha" style="cursor:pointer">
+                            <img src="57-2832.png" id="zhuce_chacha" class="chacha" style="cursor:pointer">
                         </div>
                     </div>
                     <div class="denglu_2">
@@ -88,11 +92,11 @@
                         <div><input type="email" class="zhuce_email" id="zhuceemail"></div>
                     </div>
                     <div class="denglu_2">
-                        <div class="denglu_2_word" >密码</div>
+                        <div class="denglu_2_word">密码</div>
                         <div><input type="password" class="zhuce_password1" id="zhucemima1"></div>
                     </div>
                     <div class="denglu_2">
-                        <div class="denglu_2_word" id="again">再次输<br/>入密码</div>
+                        <div class="denglu_2_word" id="again">再次输<br />入密码</div>
                         <div><input type="password" class="zhuce_password2" id="zhucemima2"></div>
                     </div>
                     <div class="denglu_3">
@@ -108,7 +112,7 @@
                             </div>
                         </div>
                         <div class="xitong_1_2">
-                            <img src="57-2832.png" id="xitong_chacha"  class="chacha" style="cursor:pointer">
+                            <img src="57-2832.png" id="xitong_chacha" class="chacha" style="cursor:pointer">
                         </div>
                     </div>
                     <div class="xitong_2">
@@ -118,12 +122,12 @@
 
                     </div>
                 </div>
-                <div id="gongneng1">    
+                <div id="gongneng1">
                     <div class="mid_mid_top">
                         <div class="mid_mid_top_left" id="tuijian">推荐</div>
                         <!-- <div class="mid_mid_top_right" id="fenlei">分类</div> -->
                     </div>
-                    <div class="mid_mid_mid" >
+                    <div class="mid_mid_mid">
                         <div class="mid_mid_mid_1">
                             <div class="mid_mid_mid_2">
                                 <div class="mid_mid_mid_2_photo"><img src="" alt="" class="mid_mid_mid_2_photo_1"></div>
@@ -179,62 +183,181 @@
                             </div>
                         </div>
                     </div>
-                </div> 
-                <div id="gongneng2" style="background-color:blue;">
+                </div>
+                <div id="gongneng2" style="background-color:blue; display: none;">
                     <!-- 搜索功能填充 -->
 
                     <!-- 搜索功能填充 -->
                 </div>
-                <div id="gongneng3" style="background-color:blue;">
+                <div id="gongneng3" style="display: none;">
                     <!-- 借还记录功能填充 -->
+                    <div class="recordDiv" >
+                        <div class="unreturnedBook">
+                            
+                            <span class="word">未归还书籍：</span>
+                            <div class="bookList">
+                                <div class="bookUnit">
+                                    <div class="cover">
+                                        <img src="牧神记.webp" alt="">
+                                    </div>
+                                    <h4>书名：牧神记</h4>
+                                    <h4>作者：宅猪</h4>
+                                </div>
+                                <div class="bookUnit">
+                                    <div class="cover">
+                                        <img src="西游记.gif" alt="">
+                                    </div>
+                                    <h4>书名：西游记</h4>
+                                    <h4>作者：吴承恩</h4>
+                                </div>
+                                <div class="bookUnit">
+                                    <div class="cover">
+                                        <img src="水浒传.jpg" alt="">
+                                    </div>
+                                    <h4>书名：水浒传</h4>
+                                    <h4>作者：施耐庵</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="borrowRecord">
+                            <span class="word">借还记录：</span>
+                            <div class="bookList">
+                                <div class="bookUnit">
+                                    <div class="cover">
+                                        <img src="三国演义.jpg" alt="">
+                                    </div>
+                                    <h4>书名：三国演义</h4>
+                                    <h4>作者：罗贯中</h4>
+                                    <h4>借：2023年3月4日</h4>
+                                    <h4>还：2023年3月14日</h4>
+                                </div>
+                                <div class="bookUnit">
+                                    <div class="cover">
+                                        <img src="红楼梦.webp" alt="">
+                                    </div>
+                                    <h4>书名：红楼梦</h4>
+                                    <h4>作者：曹雪芹</h4>
+                                    <h4>借：2023年3月4日</h4>
+                                    <h4>还：2023年3月14日</h4>
+                                </div>
+                                <div class="bookUnit">
+                                    <div class="cover">
+                                        <img src="解忧杂货店.jpg" alt="">
+                                    </div>
+                                    <h4>书名：解忧杂货店</h4>
+                                    <h4>作者：东野圭吾</h4>
+                                    <h4>借：2023年3月4日</h4>
+                                    <h4>还：2023年3月14日</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 借还记录功能填充 -->
+                </div>
+                <div id="gongneng4" style="display: none;">
+                    <!-- 个人账号功能填充 -->
+                    <!-- <div class=" person_account"> -->
+                    <div class="person_right_top">
+                        <div class="person_right_top_left">
+                            <!-- 头像 -->
+                            <div class="person_right_top_left1"><img src="" id="geren_photo"
+                                    style="border-radius: 50%;"></div>
+                            <div class="person_right_top_left2">账号：<span id="geren_zhanghao"></span></div>
+                        </div>
+                        <div class="person_right_top_right">
+                            <div class="person_right_top_right1">昵称：<span id="geren_nicheng"></span></div>
+                            <div class="person_right_top_right2">介绍：<span id="geren_jieshao"></span></div>
+                        </div>
+                    </div>
+                    <div class="person_right_top1">已看完图书</div>
+                    <div class="person_book_lnquiry">
+                        <!-- 下面一个大块是一本书 -->
+                        <div class="person_book_lnquiry1">
+                            <div class="person_book_lnquiry1_book"><img src="" class="person_book_lnquiry1_book_photo">
+                            </div>
+                            <div class="person_book_lnquiry1_name">书名：</div>
+                            <div class="person_book_lnquiry1_author">作者：</div>
+                        </div>
+                        <!-- 上面一个大块是一本书 -->
+                        <div class="person_book_lnquiry1">
+                            <div class="person_book_lnquiry1_book"><img src="" class="person_book_lnquiry1_book_photo">
+                            </div>
+                            <div class="person_book_lnquiry1_name">书名：</div>
+                            <div class="person_book_lnquiry1_author">作者：</div>
+                        </div>
+                        <div class="person_book_lnquiry1">
+                            <div class="person_book_lnquiry1_book"><img src="" class="person_book_lnquiry1_book_photo">
+                            </div>
+                            <div class="person_book_lnquiry1_name">书名：</div>
+                            <div class="person_book_lnquiry1_author">作者：</div>
+                        </div>
+                        <div class="person_book_lnquiry1">
+                            <div class="person_book_lnquiry1_book"><img src="" class="person_book_lnquiry1_book_photo">
+                            </div>
+                            <div class="person_book_lnquiry1_name">书名：</div>
+                            <div class="person_book_lnquiry1_author">作者：</div>
+                        </div>
+                    </div>
+                    <div class="person_right_top2">我的评论</div>
+                    <div class="person_comments">我啥也不知道</div>
+                    <div class="person_cancel" id="tuichu" style="cursor:pointer">退出当前账号</div>
+                    <!-- 个人账号功能填充 -->
+                </div>
+                <!-- 书籍详情功能填充 -->
+                <div class="bookDetails">
+                    <div class="returnBtn">
+                        <img src="45-15642.png" alt="" id="">
+                    </div>
+                    <div class="title">
 
-                    <!-- 借还记录功能填充 -->
-                </div>
-                <div id="gongneng4" >
-                    <!-- 个人账号功能填充 -->
-                    <!-- <div class="person_account"> -->
-                        <div class="person_right_top">
-                            <div class="person_right_top_left">
-                                <!-- 头像 -->
-                                <div class="person_right_top_left1"><img src="" id="geren_photo" style="border-radius: 50%;"></div>
-                                <div class="person_right_top_left2" >账号：<span id="geren_zhanghao"></span></div>
-                            </div>
-                            <div class="person_right_top_right">
-                                <div class="person_right_top_right1" >昵称：<span id="geren_nicheng"></span></div>
-                                <div class="person_right_top_right2" >介绍：<span id="geren_jieshao"></span></div>
-                            </div>
+
+
+                        <p>图书详情</p>
+                    </div>
+                    <div class="details">
+                        <div class="cover">
+                            <img src="./三国演义.jpg" alt="">
                         </div>
-                        <div class="person_right_top1">已看完图书</div>
-                        <div class="person_book_lnquiry">
-                            <!-- 下面一个大块是一本书 -->
-                            <div class="person_book_lnquiry1">
-                                <div class="person_book_lnquiry1_book"><img src="" class="person_book_lnquiry1_book_photo"></div>
-                                <div class="person_book_lnquiry1_name">书名：</div>
-                                <div class="person_book_lnquiry1_author">作者：</div>
-                            </div>
-                            <!-- 上面一个大块是一本书 -->
-                            <div class="person_book_lnquiry1">
-                                <div class="person_book_lnquiry1_book"><img src="" class="person_book_lnquiry1_book_photo"></div>
-                                <div class="person_book_lnquiry1_name">书名：</div>
-                                <div class="person_book_lnquiry1_author">作者：</div>
-                            </div>
-                            <div class="person_book_lnquiry1">
-                                <div class="person_book_lnquiry1_book"><img src="" class="person_book_lnquiry1_book_photo"></div>
-                                <div class="person_book_lnquiry1_name">书名：</div>
-                                <div class="person_book_lnquiry1_author">作者：</div>
-                            </div>
-                            <div class="person_book_lnquiry1">
-                                <div class="person_book_lnquiry1_book"><img src="" class="person_book_lnquiry1_book_photo"></div>
-                                <div class="person_book_lnquiry1_name">书名：</div>
-                                <div class="person_book_lnquiry1_author">作者：</div>
-                            </div>
+                        <div class="textarea">
+                            <p>书名：《三国演义》</p>
+                            <p>作者：吴承恩</p>
                         </div>
-                        <div class="person_right_top2">我的评论</div>
-                        <div class="person_comments">我啥也不知道</div>
-                        <div class="person_cancel" id="tuichu" style="cursor:pointer">退出当前账号</div>
-                    <!-- 个人账号功能填充 -->
+                        <div class="borrowBtn">
+                            <p>借阅</p>
+                        </div>
+                        <div class="bookNum">
+                            <p>5本</p>
+                        </div>
+                        <div class="contentBrief">
+                            <p>
+                                内容简介：
+                            </p>
+                            <p class="para">
+                                《三国演义》是一部杰出的中国古典小说，描写了中国第三个封建王朝的末年和三国时期的历史。它是由明朝小说家罗贯中根据历史事实和民间传说创作而成，成书于14世纪末。</p>
+                        </div>
+                        <div class="bookClass">
+                            <p>类别：历史</p>
+                        </div>
+                        <div class="score">
+                            <p>综合评分：5</p>
+                        </div>
+                        <div class="evaluate">
+                            <p>他人评价:
+                            </p>
+                            <p class="para">
+                                《三国演义》描绘了东汉末年至三国时期的历史，以及曹操、刘备、孙权等势力之间的斗争和抗争。这部小说既展现了中国封建社会末期政治、经济和文化等方面的特点，又充满生动的故事和耐人寻味的人物塑造。
+                            </p>
+                        </div>
+                        <div class="allowedTime">
+                            <p>可借阅时长：7day</p>
+                        </div>
+                        <div class="recommend">
+                            <p>相关推荐：《红楼梦》《西游记》《水浒传》</p>
+                        </div>
+                        <!-- 书籍详情功能填充 -->
+
+                    </div>
                 </div>
-                   
             </div>
             <div class="mid_right"></div>
         </div>
@@ -243,5 +366,7 @@
         </div>
     </div>
     <script src="book1.js"></script>
+    <!-- <script src="borrowRecord.js"></script> -->
 </body>
+
 </html>

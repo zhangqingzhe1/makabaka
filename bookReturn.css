@@ -1,0 +1,151 @@
+.bigbox {
+    height: auto;
+}
+
+.mid {
+    height: auto;
+}
+
+.bookDetails {
+    width: 57%;
+    height: 500px;
+    display: grid;
+    background-color: #fff;
+    grid-template-rows: repeat(30, 1fr);
+    grid-template-columns: repeat(30, 1fr);
+}
+
+.bookDetails p {
+    margin: 5px;
+}
+
+.bookDetails .returnBtn {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    grid-row-end: 4;
+    grid-row-start: 2;
+    grid-column-end: 4;
+    grid-column-start: 2;
+    border-radius: 10px;
+}
+
+.bookDetails .returnBtn img {
+    width: 30px;
+    height: 30px;
+}
+
+.bookDetails .title {
+    width: 200px;
+    height: 30px;
+    background-color: #DCB084;
+    grid-column-start: 11;
+    grid-column-end: 21;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.bookDetails .details {
+    display: grid;
+    grid-row-end: 31;
+    grid-row-start: 5;
+    grid-column-end: 31;
+    grid-column-start: 1;
+    grid-template-rows: repeat(30, 1fr);
+    grid-template-columns: repeat(30, 1fr);
+}
+
+.bookDetails .details .cover {
+    background-color: #729598;
+    border-radius: 10px;
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 2;
+    grid-row-end: 17;
+    height: 180px;
+    width: 140px;
+}
+
+.bookDetails .details .textarea {
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 18;
+    grid-row-end: 22;
+}
+
+.bookDetails .details .textarea p {
+    margin-bottom: 20px;
+}
+
+.bookDetails .details .btn {
+    background-color: #DCB084;
+    border-radius: 10px;
+    grid-column-start: 4;
+    grid-column-end: 8;
+    grid-row-start: 23;
+    grid-row-end: 25;
+    text-align: center;
+    line-height: 1.25em;
+    cursor: pointer;
+    color: #fff;
+}
+
+.bookDetails .details .contentBrief {
+    background-color: #E9DCCF;
+    border-radius: 10px;
+    grid-column-start: 12;
+    grid-column-end: 20;
+    grid-row-start: 2;
+    grid-row-end: 15;
+}
+
+.bookDetails .details .bookClass {
+    background-color: #E9DCCF;
+    border-radius: 10px;
+    grid-column-start: 22;
+    grid-column-end: 30;
+    grid-row-start: 2;
+    grid-row-end: 8;
+}
+
+.bookDetails .details .score {
+    background-color: #E9DCCF;
+    border-radius: 10px;
+    grid-column-start: 22;
+    grid-column-end: 30;
+    grid-row-start: 9;
+    grid-row-end: 15;
+}
+
+.bookDetails .details .evaluate {
+    background-color: #E9DCCF;
+    border-radius: 10px;
+    grid-column-start: 12;
+    grid-column-end: 30;
+    grid-row-start: 16;
+    grid-row-end: 25;
+}
+
+.bookDetails .details .deadline {
+    background-color: #E9DCCF;
+    border-radius: 10px;
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 26;
+    grid-row-end: 30;
+}
+
+.bookDetails .details .recommend {
+    background-color: #E9DCCF;
+    border-radius: 10px;
+    grid-column-start: 12;
+    grid-column-end: 30;
+    grid-row-start: 26;
+    grid-row-end: 30;
+}

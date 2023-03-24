@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="book1.css">
+    <link rel="stylesheet" href="bookDetails.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="bigbox">
+        <!-- 导航栏 -->
+        <div class="top">
+            <div class="top_left">
+                <img src="2-94.png" alt="" class="top_left_photo">
+            </div>
+            <div class="top_mid"></div>
+            <div class="top_right">
+                <div class="top_right_word" id="denglu_button">登录</div>
+                <div class="top_right_word" id="zhuce_button">注册</div>
+                <div class="top_right_word" id="bangzhu_button">帮助</div>
+            </div>
+
+        </div>
+        <div class="mid">
+            <div class="mid_left">
+                <div class="mid_left_line">
+                    <img src="书库1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2">
+                </div>
+                <div class="mid_left_line">
+                    <img src="搜索1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2">
+                </div>
+                <div class="mid_left_line" id="record">
+                    <img src="借还记录1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2" id="recordArrow">
+                </div>
+                <div class="mid_left_line">
+                    <img src="个人简介1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2">
+                </div>
+            </div>
+            <!-- 蓝色部分（填充） -->
+            <div class="bookDetails">
+                <div class="returnBtn">
+                    <img src="45-15642.png" alt="">
+                </div>
+                <div class="title">
+                    <p>图书详情</p>
+                </div>
+                <div class="details">
+                    <div class="cover">
+                        <img src="./三国演义.jpg" alt="">
+                    </div>
+                    <div class="textarea">
+                        <p>书名：《三国演义》</p>
+                        <p>作者：吴承恩</p>
+                    </div>
+                    <div class="borrowBtn">
+                        <p>借阅</p>
+                    </div>
+                    <div class="bookNum">
+                        <p>5本</p>
+                    </div>
+                    <div class="contentBrief">
+                        <p>
+                            内容简介：
+                        </p>
+                        <p class="para">
+                            《三国演义》是一部杰出的中国古典小说，描写了中国第三个封建王朝的末年和三国时期的历史。它是由明朝小说家罗贯中根据历史事实和民间传说创作而成，成书于14世纪末。</p>
+                    </div>
+                    <div class="bookClass">
+                        <p>类别：历史</p>
+                    </div>
+                    <div class="score">
+                        <p>综合评分：5</p>
+                    </div>
+                    <div class="evaluate">
+                        <p>他人评价:
+                        </p>
+                        <p class="para">
+                            作为中国古代文学宝库中的重要作品，《三国演义》描绘了东汉末年至三国时期的历史，以及曹操、刘备、孙权等势力之间的斗争和抗争。这部小说既展现了中国封建社会末期政治、经济和文化等方面的特点，又充满生动的故事和耐人寻味的人物塑造。通过作者罗贯中的形象描述，这部作品塑造了一批具有个性的英雄人物。
+                        </p>
+                    </div>
+                    <div class="allowedTime">
+                        <p>可借阅时长：7day</p>
+                    </div>
+                    <div class="recommend">
+                        <p>相关推荐：《红楼梦》《西游记》《水浒传》</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mid_right"></div>
+
+        </div>
+        <div class="bot">
+            <img src="2-137.png" class="bot_img">
+        </div>
+    </div>
+    <script src="bookDetails.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="book1.css">
+    <link rel="stylesheet" href="borrowRecord.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="bigbox">
+        <!-- 导航栏 -->
+        <div class="top">
+            <div class="top_left">
+                <img src="2-94.png" alt="" class="top_left_photo">
+            </div>
+            <div class="top_mid"></div>
+            <div class="top_right">
+                <div class="top_right_word" id="denglu_button">登录</div>
+                <div class="top_right_word" id="zhuce_button">注册</div>
+                <div class="top_right_word" id="bangzhu_button">帮助</div>
+            </div>
+
+        </div>
+        <div class="mid">
+            <div class="mid_left">
+                <div class="mid_left_line">
+                    <img src="书库1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2">
+                </div>
+                <div class="mid_left_line">
+                    <img src="搜索1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2">
+                </div>
+                <div class="mid_left_line" id="record">
+                    <img src="借还记录1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2" id="recordArrow">
+                </div>
+                <div class="mid_left_line">
+                    <img src="个人简介1.png" class="mid_left_line_img1">
+                    <img src="右箭头.png" class="mid_left_line_img2">
+                </div>
+            </div>
+            <div class="recordDiv">
+                <div class="unreturnedBook">
+                    <h2>未归还书籍：</h2>
+                    <div class="bookList">
+                        <div class="bookUnit">
+                            <div class="cover">
+                                <img src="牧神记.webp" alt="">
+                            </div>
+                            <h4>书名：牧神记</h4>
+                            <h4>作者：宅猪</h4>
+                        </div>
+                        <div class="bookUnit">
+                            <div class="cover">
+                                <img src="西游记.gif" alt="">
+                            </div>
+                            <h4>书名：西游记</h4>
+                            <h4>作者：吴承恩</h4>
+                        </div>
+                        <div class="bookUnit">
+                            <div class="cover">
+                                <img src="水浒传.jpg" alt="">
+                            </div>
+                            <h4>书名：水浒传</h4>
+                            <h4>作者：施耐庵</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="borrowRecord">
+                    <h2>借还记录：</h2>
+                    <div class="bookList">
+                        <div class="bookUnit">
+                            <div class="cover">
+                                <img src="三国演义.jpg" alt="">
+                            </div>
+                            <h4>书名：三国演义</h4>
+                            <h4>作者：罗贯中</h4>
+                            <h4>借：2023年3月4日</h4>
+                            <h4>还：2023年3月14日</h4>
+                        </div>
+                        <div class="bookUnit">
+                            <div class="cover">
+                                <img src="红楼梦.webp" alt="">
+                            </div>
+                            <h4>书名：红楼梦</h4>
+                            <h4>作者：曹雪芹</h4>
+                            <h4>借：2023年3月4日</h4>
+                            <h4>还：2023年3月14日</h4>
+                        </div>
+                        <div class="bookUnit">
+                            <div class="cover">
+                                <img src="解忧杂货店.jpg" alt="">
+                            </div>
+                            <h4>书名：解忧杂货店</h4>
+                            <h4>作者：东野圭吾</h4>
+                            <h4>借：2023年3月4日</h4>
+                            <h4>还：2023年3月14日</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mid_right"></div>
+
+        </div>
+        <div class="bot">
+            <img src="2-137.png" class="bot_img">
+        </div>
+    </div>
+    <script src="book1.js"></script>
+    <script src="borrowRecord.js"></script>
+</body>
+
+</html>
